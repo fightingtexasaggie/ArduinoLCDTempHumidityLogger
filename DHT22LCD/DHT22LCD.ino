@@ -75,6 +75,13 @@ void loop() {
     
     String timeStamp = "";
     
+    timeStamp += String(now.year());
+    timeStamp += String("-");
+    timeStamp += String(now.month());
+    timeStamp += String("-");
+    timeStamp += String(now.day());
+    timeStamp += " ";
+    
     if (now.hour() < 10) { timeStamp += "0"; }
     timeStamp += String(now.hour());
     timeStamp += ":";
@@ -122,7 +129,7 @@ void loop() {
       lcd.setCursor(0, 1);
       lcd.print("datalog.txt");
     }
-    delay(5000);
+    delay(5*60*1000);
 }
 
 void fmtDouble(double val, byte precision, char *buf, unsigned bufLen = 0xffff);
