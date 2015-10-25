@@ -32,9 +32,6 @@ void setup() {
       lcd.print("RTC NOT running!");
       // following line sets the RTC to the date & time this sketch was compiled
       rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-      // This line sets the RTC with an explicit date & time, for example to set
-      // January 21, 2014 at 3am you would call:
-      // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
   }
   
 }
@@ -46,13 +43,21 @@ void loop() {
     
     humidity = dht.readHumidity();
     tempf = dht.readTemperature(true);
-    lcd.setCursor(0,0);
+    lcd.setCursor(0, 0);
     lcd.print(tempf);
     lcd.print("F");
-    lcd.setCursor(8,0);
+    lcd.setCursor(8, 0);
     lcd.print(humidity);
     lcd.print("%");
-    lcd.setCursor(0,1);
+    lcd.setCursor(0, 1);
+    lcd.print("                ");
+    lcd.setCursor(0, 1);
+    lcd.print(now.hour());
+    lcd.print(":");
+    if (now.minute() < 10) { lcd.print("0"); }
+    lcd.print(now.minute());
+    lcd.print(":");
+    if (now.second() < 10) { lcd.print("0"); }
     lcd.print(now.second());
     delay(5000);
 }
