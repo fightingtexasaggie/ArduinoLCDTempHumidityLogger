@@ -99,7 +99,6 @@ void loop() {
     dataLog += dTemp;
     dataLog += ",";
     dataLog += dHum;
-    dataLog += ",";
     
     lcd.setCursor(0, 0);
     lcd.print(tempf);
