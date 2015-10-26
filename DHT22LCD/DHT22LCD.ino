@@ -128,7 +128,7 @@ void loop() {
       lcd.setCursor(0, 1);
       lcd.print("datalog.txt");
     }
-    delay(5*60*1000);
+    delay(60000);
 }
 
 void fmtDouble(double val, byte precision, char *buf, unsigned bufLen = 0xffff);
