@@ -54,6 +54,7 @@ void setup() {
       delay(500);
       rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
     }
+    //rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
     lcd.clear();
 }
 
@@ -99,7 +100,6 @@ void loop() {
     dataLog += dTemp;
     dataLog += ",";
     dataLog += dHum;
-    dataLog += ",";
     
     lcd.setCursor(0, 0);
     lcd.print(tempf);
